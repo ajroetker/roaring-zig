@@ -124,6 +124,6 @@ pub fn main() !void {
 }
 
 export fn roaring_iterator_sumall(value: u32, param: ?*anyopaque) bool {
-    @as(*u32, @ptrCast(@alignCast(@alignOf(u32), param))).* += value;
+    @as(*u32, @ptrCast(@alignCast(param))).* += value;
     return true; // iterate till the end
 }
